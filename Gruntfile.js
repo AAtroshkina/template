@@ -77,6 +77,16 @@ module.exports = function(grunt) {
         // куда
         dest: 'build/img/',
       },
+      // копируем иконки
+      ico: {
+        expand: true,
+        // откуда
+        cwd: 'src/',
+        // какие файлы (все картинки (см. расширения) из корня указанной папки и всех подпапок)
+        src: ['*.{png,ico}','browserconfig.xml'],
+        // куда
+        dest: 'build/',
+      },
     },
 
     // обрабатываем разметку (инклуды, простейший шаблонизатор)
@@ -199,6 +209,7 @@ module.exports = function(grunt) {
     'style',
     'img',
     'includereplace:html',
+    'copy:ico',
     'gh-pages',
   ]);
 
