@@ -1,10 +1,10 @@
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.clearfix() {
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
 }
-
-.clearfix:after {
-    clear: both;
-}
-
