@@ -1,0 +1,51 @@
+@color-defoult: #F44336;
+@text-defoult: " ";
+
+.outline-text(@color: @color-defoult, @text: @text-defoult) {
+	outline: 2px solid @color;
+	position: relative;
+
+	&::before {
+		content: @text !important;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #fff;
+		background: @color;
+		padding: 5px 10px;
+		font-size: 12px;
+		font-family: "Arial", sans-serif;
+		line-height: 20px;
+		border-radius: 0 0 5px 0;
+	}
+}
+
+body {
+	> header {
+		.outline-text(rgba(255, 87, 34, .75), "header");
+	}
+}
+
+body {
+	main {
+		.outline-text(rgba(76, 175, 80, .75), "main");
+		outline-offset: 2px;
+	}
+}
+
+body {
+	> footer {
+		.outline-text(rgba(255, 87, 34, .75), "footer");
+	}
+}
+
+main {
+	> section {
+		.outline-text(rgba(255, 152, 0, .75), "section");
+	}
+}
+
+.container {
+	.outline-text(rgba(3, 169, 244, .75), ".container");
+	background-color: rgba(3, 169, 244, .1);
+}
